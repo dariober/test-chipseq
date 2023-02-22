@@ -1,0 +1,4 @@
+snakemake =7.22.0
+macs2 =2.2.7.1
+samtools =1.16.1
+bwa =0.7.17

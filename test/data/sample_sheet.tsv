@@ -1,0 +1,5 @@
+library_id	type	control_id	genome	fastq_r1
+smp1	chip	ctrl1	test/data/genome.fa	test/data/smp1_R1.fastq.gz
+smp2	chip	ctrl2	test/data/genome.fa	test/data/smp2_R1.fastq.gz
+ctrl1	input	NA	test/data/genome.fa	test/data/ctrl1_R1.fastq.gz
+ctrl2	input	NA	test/data/genome.fa	test/data/ctrl2_R1.fastq.gz
