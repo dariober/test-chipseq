@@ -1,7 +1,7 @@
 <!-- vim-markdown-toc GFM -->
 
 * [Description](#description)
-* [Installation](#installation)
+* [Setup](#setup)
 * [Usage](#usage)
 * [Developer](#developer)
 
@@ -9,30 +9,44 @@
 
 # Description
 
-Example of a pipeline for processing ChIPseq data. 
+Example of a pipeline for processing ChIPseq data going from fastq files to
+binding sites (peaks). 
 
-Although this code is functional, it is only meant to showcase the use of
+Although this code is fully functional, it is only meant to showcase the use of
 Python and Snakemake.
 
-# Installation
+# Setup
 
 Using [conda](https://docs.conda.io/projects/conda/en/latest/index.html) and
 [mamba](https://github.com/mamba-org/mamba) configured for working with [bioconda](https://bioconda.github.io/):
 
 ```
-conda create -n test-chipseq --yes
-conda activate test-chipseq
+mamba create -n test-chipseq --yes
+mamba activate test-chipseq
 mamba install -n test-chipseq --file requirements.txt --yes
 ```
 
 # Usage
 
 ```
-snakemake -p -n -j 4 \
-    -C sample_sheet=test/data/sample_sheet.tsv \
-       genome=$PWD/test/data/geome.fa \
-    -d output
+snakemake -C sample_sheet=$PWD/test/data/sample_sheet.tsv \
+             genome=$PWD/test/data/genome.fa \
+    -p -n -j 4 --directory output
 ```
+
+Where:
+
+* **sample_sheet**: Full path of tab-separated file of library characteristics with columns:
+    * `library_id`: Unique library ID
+    * `type`: Type of library: `chip` or `input`    
+    * `control_id`: ID of the control library for this library or NA if library_id is an `input` library 
+    * `fastq_r1`: Path to fastq file; path relative to output directory
+
+* **genome**: Full path to fasta file of reference genome
+
+* **--directory**: Output directory
+
+`-p -n -j`: For this and other options see `snakemake -h`
 
 # Developer
 
@@ -40,4 +54,11 @@ Run tests:
 
 ```
 ./test/test.py
+```
+
+Format code:
+
+```
+snakefmt Snakefile
+black lib/utils.py test/test.py
 ```

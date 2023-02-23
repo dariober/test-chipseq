@@ -1,3 +1,10 @@
 /output/
+__pycache__/
+.snakemake/
 *.swp
 *.swo
+*.fa.amb
+*.fa.ann
+*.fa.bwt
+*.fa.pac
+*.fa.sa
