@@ -1,3 +1,8 @@
+[![test status](https://github.com/dariober/test-chipseq/actions/workflows/main.yml/badge.svg)](https://github.com/dariober/test-chipseq/actions?query=branch%3Amaster+workflow%3Amain)
+[![Language](http://img.shields.io/badge/language-python-blue.svg)](https://www.python.com/)
+[![Snakemake](https://img.shields.io/badge/snakemake-brightgreen.svg?style=flat)](https://snakemake.readthedocs.io)
+[![License](http://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/dariober/excelToCsv)
+
 <!-- vim-markdown-toc GFM -->
 
 * [Description](#description)
