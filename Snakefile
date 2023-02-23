@@ -1,8 +1,4 @@
-from importlib.machinery import SourceFileLoader
-
-utils = SourceFileLoader(
-    "utils.py", os.path.join(workflow.basedir, "lib", "utils.py")
-).load_module()
+from lib import utils
 
 ss = utils.SampleSheet(config["sample_sheet"])
 
