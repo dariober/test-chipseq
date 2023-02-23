@@ -31,7 +31,7 @@ mamba install -n test-chipseq --file requirements.txt --yes
 ```
 snakemake -C sample_sheet=$PWD/test/data/sample_sheet.tsv \
              genome=$PWD/test/data/genome.fa \
-    -p -n -j 4 --directory output
+    -p --dry-run -j 4 --directory output
 ```
 
 Where:
@@ -46,7 +46,7 @@ Where:
 
 * **--directory**: Output directory
 
-`-p -n -j`: For this and other options see `snakemake -h`
+`-p -j ...`: For this and other options see `snakemake -h`. Remove `--dry-run` for actual execution.
 
 # Developer
 
